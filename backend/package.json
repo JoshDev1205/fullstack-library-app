@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --no-notify --respawn --transpileOnly ./src",
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/nexus": "0.0.1",
+    "apollo-server": "^2.9.0",
+    "graphql": "^14.5.3",
+    "nexus": "^0.12.0-beta.6"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.42",
+    "typescript": "^3.5.3"
+  }
+}

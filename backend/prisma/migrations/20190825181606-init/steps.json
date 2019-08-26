@@ -1,0 +1,152 @@
+{
+  "version": "0.2.7",
+  "steps": [
+    {
+      "stepType": "CreateModel",
+      "name": "Author",
+      "embedded": false
+    },
+    {
+      "stepType": "CreateModel",
+      "name": "Book",
+      "embedded": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Author",
+      "name": "id",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": true,
+      "id": {
+        "strategy": "Auto",
+        "sequence": null
+      },
+      "default": {
+        "Expression": [
+          "cuid",
+          "String",
+          []
+        ]
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Author",
+      "name": "name",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Author",
+      "name": "country",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Author",
+      "name": "books",
+      "type": {
+        "Relation": {
+          "to": "Book",
+          "to_fields": [],
+          "name": "AuthorToBook",
+          "on_delete": "None"
+        }
+      },
+      "arity": "list",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Book",
+      "name": "id",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": true,
+      "id": {
+        "strategy": "Auto",
+        "sequence": null
+      },
+      "default": {
+        "Expression": [
+          "cuid",
+          "String",
+          []
+        ]
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Book",
+      "name": "title",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Book",
+      "name": "description",
+      "type": {
+        "Base": "String"
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Book",
+      "name": "quantity",
+      "type": {
+        "Base": "Int"
+      },
+      "arity": "optional",
+      "isUnique": false,
+      "default": {
+        "Int": 0
+      }
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Book",
+      "name": "author",
+      "type": {
+        "Relation": {
+          "to": "Author",
+          "to_fields": [
+            "id"
+          ],
+          "name": "AuthorToBook",
+          "on_delete": "None"
+        }
+      },
+      "arity": "required",
+      "isUnique": false
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Book",
+      "name": "price",
+      "type": {
+        "Base": "Int"
+      },
+      "arity": "required",
+      "isUnique": false
+    }
+  ]
+}
